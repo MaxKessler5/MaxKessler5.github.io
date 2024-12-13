@@ -2,6 +2,17 @@
 <html>
 <head>
     <title>Thanks for logging in with google!</title>
+    <script>
+        fetch('https://api.github.com/users/octocat')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            // You could display data in the page, e.g.:
+            document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+          })
+          .catch(err => console.error('Error fetching:', err));
+      </script>
+      <pre id="output"></pre>
 </head>
 <body>
     <h1>Currenty, this does nothing at all.</h1>
